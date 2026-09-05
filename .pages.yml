@@ -1,0 +1,143 @@
+# Panel de redacción en el navegador (Pages CMS — pagescms.org).
+# Entra en app.pagescms.org con tu cuenta de GitHub, elige este repositorio
+# y podrás escribir, subir fotos y vídeos y publicar sin tocar ningún archivo.
+
+media:
+  - name: media
+    label: Fotos y vídeos
+    input: media
+    output: /media
+    categories: [image, video, document]
+
+content:
+  - name: articles
+    label: Noticias y reportajes
+    type: collection
+    path: contingut/articles
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [titulo, seccion, fecha]
+      primary: titulo
+      sort: [fecha, titulo]
+      default:
+        sort: fecha
+        order: desc
+    fields:
+      - name: titulo
+        label: Titular
+        type: string
+        required: true
+      - name: subtitulo
+        label: Entradilla
+        type: text
+        description: Una o dos frases que resumen la pieza.
+      - name: seccion
+        label: Sección
+        type: select
+        default: sucesos
+        options:
+          values: [sucesos, judicial, reportajes]
+      - name: fecha
+        label: Fecha y hora de publicación
+        type: date
+        options:
+          format: yyyy-MM-dd HH:mm
+          time: true
+        required: true
+      - name: autor
+        label: Autoría
+        type: string
+        default: Redacción Crónica 33
+      - name: imagen
+        label: Fotografía de portada
+        type: image
+        options:
+          media: media
+      - name: pie_imagen
+        label: Pie de foto
+        type: string
+      - name: video
+        label: Vídeo propio (sube el archivo)
+        type: file
+        options:
+          media: media
+          extensions: [mp4, webm, mov]
+      - name: video_poster
+        label: Imagen de portada del vídeo
+        type: image
+        options:
+          media: media
+      - name: embed
+        label: Enlace a incrustar (YouTube, TikTok, Instagram, X…)
+        type: string
+      - name: etiquetas
+        label: Etiquetas
+        type: string
+        list: true
+      - name: destacado
+        label: Abre la portada
+        type: boolean
+        default: false
+      - name: ultima_hora
+        label: Sale en la barra roja de última hora
+        type: boolean
+        default: false
+      - name: borrador
+        label: Borrador (no se publica)
+        type: boolean
+        default: false
+      - name: body
+        label: Cuerpo de la pieza
+        type: rich-text
+
+  - name: pagines
+    label: Páginas fijas
+    type: collection
+    path: contingut/pagines
+    filename: "{primary}.md"
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: slug
+        label: Dirección (sin barras)
+        type: string
+      - name: body
+        label: Contenido
+        type: rich-text
+
+  - name: config
+    label: Configuración del medio
+    type: file
+    path: config.json
+    fields:
+      - name: nom
+        label: Nombre del medio
+        type: string
+      - name: nom_principal
+        label: Parte blanca del logotipo
+        type: string
+      - name: nom_accent
+        label: Parte roja del logotipo
+        type: string
+      - name: lema
+        label: Lema
+        type: string
+      - name: descripcio
+        label: Descripción para Google y redes
+        type: text
+      - name: url
+        label: Dirección del sitio
+        type: string
+      - name: logo
+        label: Logotipo en imagen (opcional)
+        type: image
+        options:
+          media: media
+      - name: color_principal
+        label: Color de marca
+        type: string
+      - name: articles_per_pagina
+        label: Piezas por página
+        type: number
