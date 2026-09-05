@@ -1,0 +1,44 @@
+{
+  "nom": "Crónica 33",
+  "nom_principal": "CRÓNICA",
+  "nom_accent": "33",
+  "lema": "Sucesos · Investigaciones · Internacional",
+  "descripcio": "Crónica 33: sucesos, crímenes, información policial y judicial, última hora y las noticias de mayor relevancia.",
+  "url": "https://cronica33.netlify.app",
+  "idioma": "es",
+  "logo": "/media/logo.png",
+  "favicon": "/media/icona.png",
+  "color_principal": "#c3132b",
+  "autor_per_defecte": "Redacción Crónica 33",
+  "articles_per_pagina": 12,
+  "seccions": [
+    { "slug": "sucesos", "nom": "Sucesos" },
+    { "slug": "judicial", "nom": "Judicial" },
+    { "slug": "reportajes", "nom": "Reportajes" }
+  ],
+  "xarxes": [
+    { "nom": "Instagram", "url": "" },
+    { "nom": "TikTok", "url": "" },
+    { "nom": "YouTube", "url": "" },
+    { "nom": "X", "url": "" },
+    { "nom": "Facebook", "url": "" },
+    { "nom": "Telegram", "url": "" }
+  ],
+  "contacte": { "email": "", "whatsapp": "" },
+  "publicitat": {
+    "adsense_client": "",
+    "slot_capcalera": "",
+    "slot_article": "",
+    "slot_lateral": "",
+    "banners_propis": [
+      {
+        "imatge": "",
+        "enllac": "",
+        "alt": "Espacio publicitario disponible",
+        "posicio": "article"
+      }
+    ]
+  },
+  "analitica": { "plausible_domini": "", "ga4": "" },
+  "peu_legal": "Medio de comunicación digital independiente."
+}
